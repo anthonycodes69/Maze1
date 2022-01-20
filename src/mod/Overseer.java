@@ -14,6 +14,7 @@ public class Overseer {
 	private Minotaur _min3;
 	private Sword _mySword;
 	private Trap _myTrap;
+	public static boolean hasSword = false;
 	public static boolean isRico =false;
 	public static Location trap  = new Location(4,4);
 	
@@ -60,7 +61,10 @@ public class Overseer {
 			{
 				_ply._hasSword = true;
 				System.out.println("q");
+				hasSword = _ply._hasSword;
 			}
+			
+			hasSword = _ply._hasSword;
 			moveMinotaur();
 			moveMinotaur2();
 			moveMinotaur3();
