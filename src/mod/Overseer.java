@@ -17,7 +17,14 @@ public class Overseer {
 	
 	public Overseer() {	
 		JOptionPane.showInputDialog("What is your name?");
-		_maze = new Maze(0);
+		int difficulty = Integer.parseInt( JOptionPane.showInputDialog(frame,
+        "Choose your difficulty level 1-3",
+        JOptionPane.INFORMATION_MESSAGE,
+        null,
+        null,
+        "1"));
+		
+		_maze = new Maze(difficulty-1);
 		_ply = new Player(_maze.getStart());
 		_min = new Minotaur(_maze.getSpawn());
 		_min2 = new Minotaur(new Location(6,9));
