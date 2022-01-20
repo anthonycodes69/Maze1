@@ -157,8 +157,11 @@ public class Controller {
 					MAP += end + space;
 				}
 				else if(r == sRow && c == sCol) {
-					if(_ply.hasSword() == false)
+					if(Overseer.hasSword)
 					{
+						MAP += path + space;
+					}
+					else{
 						MAP += Sword + space;
 					}
 					
