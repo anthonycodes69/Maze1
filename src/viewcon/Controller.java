@@ -110,6 +110,7 @@ public class Controller {
 		String path = "o";
 		String space = "   ";
 		String min = "M";
+		String trap = "卍";
 		String end = "E";
 		String Sword = "S";
 		String min2 = "M";
@@ -130,8 +131,8 @@ public class Controller {
 		int eCol = _map.getEnd().getCol();
 		int sRow = 7;
 		int sCol = 1;
-		int trapRow = 2;
-		int trapCol = 1;
+		int trapRow = 4;
+		int trapCol = 4;
 		
 		
 		
@@ -163,9 +164,9 @@ public class Controller {
 					
 				}
 				else if(r == trapRow && c == trapCol) {
-					if(_isRico == true)
+					if(Overseer.isRico)
 					{
-						MAP += t + space;
+						MAP += trap + space;
 					}
 					
 				}
