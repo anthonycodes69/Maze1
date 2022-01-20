@@ -14,15 +14,12 @@ public class Overseer {
 	private Minotaur _min3;
 	private Sword _mySword;
 	private Trap _myTrap;
+	public static boolean isRico =false;
+	public static Location trap  = new Location(4,4);
 	
 	public Overseer() {	
-		JOptionPane.showInputDialog("What is your name?");
-		int difficulty = Integer.parseInt( JOptionPane.showInputDialog(frame,
-        "Choose your difficulty level 1-3",
-        JOptionPane.INFORMATION_MESSAGE,
-        null,
-        null,
-        "1"));
+		isRico = JOptionPane.showInputDialog("What is your name?").toLowercase().equals("rico");
+		int difficulty = Integer.parseInt( JOptionPane.showInputDialog("Choose your difficulty level 1-3",));
 		
 		_maze = new Maze(difficulty-1);
 		_ply = new Player(_maze.getStart());
@@ -81,6 +78,11 @@ public class Overseer {
 			swordCol = _mySword.getLoc().getCol();
 			
 			pVE(pRow, pCol, mRow, mCol);
+			trapKill(pRow, pCol);
+			swordKill(swordRow, swordCol, mRow, mCol);
+			swordKill(swordRow, swordCol, m2Row, m2Col);
+			swordKill(swordRow, swordCol, m3Row, m3Col);
+			
 		}
 		if(!_ply.isDead()) {
 			_cnt.victory();
@@ -95,8 +97,8 @@ public class Overseer {
 			_ply.kill();
 	}
 	
-	private void trapKill(int pRow, int pCol, int trapRow, int trapCol) {
-		if(pRow == trapRow && pCol == trapCol) 
+	private void trapKill(int pRow, int pCol) {
+		if(pRow == 4 && pCol == 4) 
 			_ply.kill();
 	}
 	
@@ -269,7 +271,7 @@ public class Overseer {
 	}
 	
 	
-	
+	//cum?
 	
 	
 	
