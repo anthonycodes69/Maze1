@@ -34,7 +34,21 @@ public class Maze {
 			_start = new Location(9, 1);
 			_end = new Location(0, 9);
 			_spawn = new Location(0, 0);
-		} else {
+		}
+		if (x == 1) {
+			_map = Map.Hard;
+			_start = new Location(9, 1);
+			_end = new Location(0, 9);
+			_spawn = new Location(0, 0);
+		}
+		if (x == 2) {
+			_map = Map.Hardd;
+			_start = new Location(9, 1);
+			_end = new Location(0, 9);
+			_spawn = new Location(0, 0);
+		}
+		
+		else {
 			_map = Map.Easy;
 			_start = new Location(9, 1);
 			_end = new Location(0, 9);
